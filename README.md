@@ -1,12 +1,18 @@
 # splash_demo
 
-A new Flutter project.
+Bumurise  project.
+## screenshots
+![splashscreen](assets/screenshots/appscreen.png)
+![screen1](assets/screenshots/onboarding_screen1.png)
+![screen2](assets/screenshots/onboarding_screen2.png)
+![screen3](assets/screenshots/onboarding_screen3.png)
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Bumurise consortium Limited is a business that deals with savings and loans.
 
 A few resources to get you started if this is your first Flutter project:
+
 
 - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
