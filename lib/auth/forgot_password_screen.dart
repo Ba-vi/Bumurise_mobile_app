@@ -26,7 +26,7 @@ class ForgotPasswordScreen extends StatelessWidget {
             // Illustration
             Center(
               child: Image.asset(
-                'assets/forgot_password.png', // Add your illustration in assets folder
+                'assets/forgotpassword.png', // Add your illustration in assets folder
                 height: 250,
               ),
             ),
