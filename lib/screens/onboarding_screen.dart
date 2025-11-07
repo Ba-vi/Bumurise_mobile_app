@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart'; 
-import 'home_screen.dart';
+import 'package:flutter/material.dart';
+import 'package:splash_demo/Auth/login_screen.dart'; 
 
 
 class OnboardingScreen extends StatefulWidget { 
@@ -48,7 +48,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               onPressed: () { 
                 Navigator.pushReplacement( 
                   context, 
-                  MaterialPageRoute(builder: (_) => HomeScreen()), 
+                  MaterialPageRoute(builder: (_) => LoginScreen()), 
                 ); 
               }, 
               child: Container( 
