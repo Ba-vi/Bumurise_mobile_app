@@ -6,6 +6,8 @@ Bumurise  project.
 ![screen1](assets/screenshots/onboarding_screen1.png)
 ![screen2](assets/screenshots/onboarding_screen2.png)
 ![screen3](assets/screenshots/onboarding_screen3.png)
+![screen4](assets/screenshots/login_screen.png)
+![screen5](assets/screenshots/register_screen.png)
 
 ## Getting Started
 
