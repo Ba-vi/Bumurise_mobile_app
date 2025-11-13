@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'login_screen.dart';
+import 'package:splash_demo/auth/login_screen.dart';
+
 
 class VerificationScreen extends StatefulWidget {
   const VerificationScreen({super.key});
@@ -21,7 +22,16 @@ class _VerificationScreenState extends State<VerificationScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: brandBlue,
-        title: const Text('Verification'),
+        
+        
+    title: const Text(
+      'Verification',
+      style: TextStyle(
+        color: Colors.white,
+        fontSize: 20,
+        fontWeight: FontWeight.bold,
+      ),
+    ),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
@@ -46,7 +56,7 @@ class _VerificationScreenState extends State<VerificationScreen> {
             const Text(
               'Enter the 4-digit code sent to your email address.',
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 16, color: Colors.grey),
+              style: TextStyle(fontSize: 16, color: Color.fromARGB(255, 46, 46, 46)),
             ),
 
             const SizedBox(height: 30),
@@ -126,8 +136,8 @@ class _VerificationScreenState extends State<VerificationScreen> {
               child: const Text(
                 'Back to Login',
                 style: TextStyle(
-                  color: Colors.black54,
-                  decoration: TextDecoration.underline,
+                  color: Color.fromARGB(255, 20, 20, 20),
+                  decoration: TextDecoration.none,
                 ),
               ),
             ),

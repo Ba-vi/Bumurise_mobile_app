@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'login_screen.dart';
+import 'package:splash_demo/auth/verification_screen.dart';
 
 class ForgotPasswordScreen extends StatelessWidget {
   const ForgotPasswordScreen({super.key});
@@ -13,7 +13,11 @@ class ForgotPasswordScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: brandBlue,
-        title: const Text('Forgot Password'),
+
+        title: const Text(
+          'Forgot Password',
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
@@ -73,9 +77,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                 onPressed: () {
                   //  Implement password reset functionality
                   ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text('Password reset link sent!'),
-                    ),
+                    const SnackBar(content: Text('Password reset link sent!')),
                   );
                 },
                 child: const Text(
@@ -96,7 +98,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (_) => const LoginScreen(),
+                        builder: (_) => const VerificationScreen(),
                       ),
                     );
                   },

@@ -1,4 +1,4 @@
-package com.example.splash_demo
+package com.example.bumurise
 
 import io.flutter.embedding.android.FlutterActivity
 

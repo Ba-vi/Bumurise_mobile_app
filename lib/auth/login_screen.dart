@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:splash_demo/auth/registration_screen.dart';
 import 'package:splash_demo/auth/forgot_password_screen.dart';
 
-
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -28,13 +27,22 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // App title
+                //Logo Section 
                 Center(
                   child: Column(
-                    children: const [
-                      SizedBox(height: 10),
+                    children: [
+                      const SizedBox(height: 10),
+                      ClipOval(
+                        child: Image.asset(
+                          'assets/img4.jpg',
+                          height: 80,
+                          width: 80,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      const SizedBox(height: 8),
                       Text(
-                        'Bumurise App',
+                        'Bumurise',
                         style: TextStyle(
                           fontSize: 26,
                           fontWeight: FontWeight.bold,
@@ -44,6 +52,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ],
                   ),
                 ),
+
                 const SizedBox(height: 40),
 
                 const Text(
@@ -61,7 +70,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 const SizedBox(height: 30),
 
-                // Email Field
+                //Email Field
                 const Text(
                   'Email',
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
@@ -82,9 +91,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                 ),
+
                 const SizedBox(height: 20),
 
-                // Password Field
+                //Password Field 
                 const Text(
                   'Password',
                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
@@ -119,7 +129,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
 
                 const SizedBox(height: 8),
-                // Forgot Password under password field
+
+                // Forgot Password
                 Align(
                   alignment: Alignment.centerRight,
                   child: TextButton(
@@ -130,9 +141,8 @@ class _LoginScreenState extends State<LoginScreen> {
                           builder: (_) => const ForgotPasswordScreen(),
                         ),
                       );
-                      // Implement forgot password
                     },
-                    child: const Text(
+                    child: Text(
                       'Forgot Password?',
                       style: TextStyle(color: brandBlue),
                     ),
@@ -140,6 +150,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
 
                 const SizedBox(height: 20),
+
                 // Login Button
                 SizedBox(
                   width: double.infinity,
@@ -152,9 +163,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       elevation: 2,
                     ),
-                    onPressed: () {
-                      // Implement login functionality
-                    },
+                    onPressed: () {},
                     child: const Text(
                       'Login',
                       style: TextStyle(fontSize: 18, color: Colors.white),
@@ -163,7 +172,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
 
                 const SizedBox(height: 20),
-                // Already have an account? Register
+
+                // Register link 
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -187,7 +197,70 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ],
                 ),
+
+                const SizedBox(height: 30),
+
+                // OR divider
+                Row(
+                  children: const [
+                    Expanded(child: Divider(thickness: 1)),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      child: Text('OR'),
+                    ),
+                    Expanded(child: Divider(thickness: 1)),
+                  ],
+                ),
+
                 const SizedBox(height: 20),
+
+                //  Social Icons (Email & Google)
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    // Email Icon
+                    GestureDetector(
+                      onTap: () {
+                        // Add your email sign-in logic
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          // border: Border.all(
+                          //     color: brandBlue, width: 1.5),
+                        ),
+                        child: const Icon(
+                          Icons.email_outlined,
+                          color: Color.fromARGB(255, 58, 108, 183),
+                          size: 28,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 30),
+                    // Google Icon
+                    GestureDetector(
+                      onTap: () {
+                        // Add your Google sign-in logic
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          // border:
+                              // Border.all(color: Colors.red, width: 1.5),
+                        ),
+                        child: Image.asset(
+                          'assets/google.png',
+                          height: 30,
+                          width: 30,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+
+                const SizedBox(height: 40),
               ],
             ),
           ),

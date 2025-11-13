@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'login_screen.dart';
-import 'forgot_password_screen.dart';
 
 class RegistrationScreen extends StatefulWidget {
   const RegistrationScreen({super.key});
@@ -23,9 +22,16 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     const Color brandBlue = Color.fromARGB(255, 58, 108, 183);
 
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: brandBlue,
-        title: const Text('Register'),
+        title: const Text(
+          'Register',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
@@ -34,18 +40,47 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 20),
+
+            // ======= Logo Section =======
+            Center(
+              child: Column(
+                children: [
+                  ClipOval(
+                    child: Image.asset(
+                      'assets/img4.jpg',
+                      height: 80,
+                      width: 80,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    'Bumurise',
+                    style: TextStyle(
+                      fontSize: 26,
+                      fontWeight: FontWeight.bold,
+                      color: brandBlue,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
             const Text(
               'Create Your Account',
-              style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 8),
             const Text(
               'Please fill in the information below to register.',
               style: TextStyle(fontSize: 16, color: Colors.grey),
             ),
 
             const SizedBox(height: 30),
-            // Email Field
+
+            // ======= Email Field =======
             const Text('Email', style: TextStyle(fontWeight: FontWeight.w500)),
             const SizedBox(height: 8),
             TextField(
@@ -61,11 +96,10 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             ),
 
             const SizedBox(height: 20),
+
             // Password Field
-            const Text(
-              'Password',
-              style: TextStyle(fontWeight: FontWeight.w500),
-            ),
+            const Text('Password',
+                style: TextStyle(fontWeight: FontWeight.w500)),
             const SizedBox(height: 8),
             TextField(
               controller: _passwordController,
@@ -89,32 +123,11 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
               ),
             ),
 
-            const SizedBox(height: 8),
-            // Forgot Password link
-            Align(
-              alignment: Alignment.centerRight,
-              child: TextButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => const ForgotPasswordScreen(),
-                    ),
-                  );
-                },
-                child: const Text(
-                  'Forgot Password?',
-                  style: TextStyle(color: brandBlue),
-                ),
-              ),
-            ),
-
             const SizedBox(height: 20),
+
             // Confirm Password Field
-            const Text(
-              'Confirm Password',
-              style: TextStyle(fontWeight: FontWeight.w500),
-            ),
+            const Text('Confirm Password',
+                style: TextStyle(fontWeight: FontWeight.w500)),
             const SizedBox(height: 8),
             TextField(
               controller: _confirmController,
@@ -141,7 +154,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             ),
 
             const SizedBox(height: 15),
-            // Remember me checkbox
+
+            // Remember Me 
             Row(
               children: [
                 Checkbox(
@@ -158,7 +172,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             ),
 
             const SizedBox(height: 20),
-            // Register button
+
+            // Register Button 
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
@@ -170,7 +185,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   ),
                 ),
                 onPressed: () {
-                  // Registration logic
+                  // Registration logic here
                 },
                 child: const Text(
                   'Register',
@@ -180,7 +195,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             ),
 
             const SizedBox(height: 20),
-            // Already have an account
+
+            //Already have an account
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -202,6 +218,68 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 ),
               ],
             ),
+
+            const SizedBox(height: 30),
+
+            // OR divider
+            Row(
+              children: const [
+                Expanded(child: Divider(thickness: 1)),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 10),
+                  child: Text('OR'),
+                ),
+                Expanded(child: Divider(thickness: 1)),
+              ],
+            ),
+
+            const SizedBox(height: 20),
+
+            // Social Icons (Email & Google)
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                // Email Icon
+                GestureDetector(
+                  onTap: () {
+                    // Email registration logic
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      // border: Border.all(color: brandBlue, width: 1.5),
+                    ),
+                    child: const Icon(
+                      Icons.email_outlined,
+                      color: Color.fromARGB(255, 58, 108, 183),
+                      size: 30,
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 30),
+                // Google Icon
+                GestureDetector(
+                  onTap: () {
+                    // Google registration logic
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      // border: Border.all(color: Colors.red, width: 1.5),
+                    ),
+                    child: Image.asset(
+                      'assets/google.png', // make sure this file exists
+                      height: 28,
+                      width: 28,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+
+            const SizedBox(height: 40),
           ],
         ),
       ),

@@ -1,4 +1,4 @@
-# splash_demo
+# Bumurise
 
 Bumurise  project.
 ## screenshots
