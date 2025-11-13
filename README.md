@@ -9,6 +9,8 @@ Bumurise  project.
 ![screen4](assets/screenshots/login_screen.png)
 ![screen5](assets/screenshots/register_screen.png)
 ![screen6](assets/screenshots/forgot_password.png)
+![screen7](assets/screenshots/verification_screen.png)
+
 
 ## Getting Started
 
